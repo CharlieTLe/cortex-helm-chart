@@ -2,6 +2,8 @@
 
 ## master / unreleased
 
+## 3.2.1 / 2026-02-27
+
 ## 3.2.0 / 2026-02-26
 
 * [ENHANCEMENT] enable readiness probe on kiwigrid/k8s-sidecar #597
