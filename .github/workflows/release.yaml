@@ -53,7 +53,7 @@ jobs:
 
       - name: Create or Update Pull Request
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CHARLIE_ACCESS_TOKEN }}
         run: |
           git checkout -b release-${{ steps.version.outputs.new_version }}
           git add Chart.yaml README.md CHANGELOG.md docs/
