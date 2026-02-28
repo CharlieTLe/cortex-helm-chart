@@ -27,6 +27,14 @@ jobs:
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
+      - name: Check for unreleased changes
+        run: |
+          unreleased=$(awk '/^## master \/ unreleased/{flag=1; next} /^## /{flag=0} flag' CHANGELOG.md | tr -d '[:space:]')
+          if [ -z "$unreleased" ]; then
+            echo "No unreleased changes found in CHANGELOG.md — nothing to release."
+            exit 1
+          fi
+
       - name: Install Helm
         uses: azure/setup-helm@v4
         with:
