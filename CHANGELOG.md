@@ -2,6 +2,8 @@
 
 ## master / unreleased
 
+## 3.3.0 / 2026-02-28
+
 * [ENHANCEMENT] Test #192
 
 ## 3.2.0 / 2026-02-26
