@@ -32,7 +32,7 @@ jobs:
           unreleased=$(awk '/^## master \/ unreleased/{flag=1; next} /^## /{flag=0} flag' CHANGELOG.md | tr -d '[:space:]')
           if [ -z "$unreleased" ]; then
             echo "No unreleased changes found in CHANGELOG.md — nothing to release."
-            exit 1
+            exit 0
           fi
 
       - name: Install Helm
